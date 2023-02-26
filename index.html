@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Background Parallax Previewer</title>
+	<link rel="stylesheet" href="style.css">
+	</head>
+	
+	<body>
+		<div id="header-box">
+			<h1>Background Parallax Previewer</h1>
+		</div>
+		
+		<div id="page-box">
+			<div class="page-section">
+				<p>
+					<label id="file-upload">
+						<input type="file" id="img-upload">
+						Upload Image
+					</label>
+				</p>
+				<div id="canvas-border">
+					<div id="canvas-container">
+						<canvas id="engine-canvas"></canvas>
+					</div>
+				</div>
+			</div>
+			<div class="page-section">
+				<div class="scroll-table">
+					<div class="scroll-flex-sect">
+						<p>Camera Speed<br><input type="number" class="canvas-param" id="camera-speed" step="0.25"></p>
+					</div>
+					<div class="scroll-flex-sect">
+						<p>Canvas Height<br><input type="number" class="canvas-param" id="canvas-height" min="32"></p>
+					</div>
+				</div>
+				<div class="scroll-table">
+					<div class="scroll-flex-sect">
+						<table id="scroll-sections">
+							<thead>
+								<tr>
+									<th>Size</th>
+									<th>Factor</th>
+									<th>Auto Speed</th>
+									<th>Accumulator</th>
+									<th>Accum. Block</th>
+									<th class="scroll-remove"></th>
+								</tr>
+							</thead>
+							<tbody id="scroll-sect-entries"></tbody>
+						</table>
+					</div>
+					<div class="scroll-flex-sect">
+						<button class="scroll-flex-btn" onclick="addScrollSect()">Add</button><br>
+						<button class="scroll-flex-btn" onclick="clearScrollSects()">Clear</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="src/gl.js"></script>
+		<script src="src/engine.js"></script>
+		<script src="src/main.js"></script>
+	</body>
+</html>
